@@ -1,0 +1,90 @@
+<app-header></app-header>
+<section>
+    <nav class="breadcrumb-section theme1 bg-lighten2 pt-110 pb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-15">
+                        <h2 class="title text-dark text-capitalize">cart</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ol class="breadcrumb bg-transparent m-0 p-0 align-items-center justify-content-center">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">cart</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- breadcrumb-section end -->
+    <!-- product tab start -->
+    <section class="whish-list-section theme1 pt-80 pb-80">
+        <div class="container" *ngIf="cart.length">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="title mb-30 pb-25 text-capitalize">Articles de votre panier</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="text-center" scope="col">Image du produit</th>
+                                    <th class="text-center" scope="col">Nom du produit</th>
+                                    <th class="text-center" scope="col">État des stocks</th>
+                                    <th class="text-center" scope="col">Qté</th>
+                                    <th class="text-center" scope="col">Prix</th>
+                                    <th class="text-center" scope="col">action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of cart">
+                                    <th class="text-center" scope="row">
+                                        <img [src]="prefUrlImage+data.product.image" alt="img">
+                                    </th>
+                                    <td class="text-center">
+                                        <span class="whish-title">{{ data.product.name }}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge badge-success position-static">En stock</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="product-count style">
+                                            <div class="count d-flex justify-content-center">
+                                                <input type="text" [value]="data.number" disabled>
+                                                <div class="button-group">
+                                                    <button (click)="addProduct(data.product)" class="count-btn increment"><i
+                                                    class="fas fa-chevron-up"></i></button>
+                                                    <button (click)="deleteProduct(data.product)" class="count-btn decrement"><i
+                                                    class="fas fa-chevron-down"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="whish-list-price">
+                                    {{ (data.product.price*data.number).toFixed(2)}}dt
+                                </span></td>
+
+                                    <td class="text-center">
+                                        <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <a routerLink="/checkout" class="btn btn-block theme-btn--dark1 btn--lg mt-70">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+        <div class="container" *ngIf="!cart.length">
+            <h3 class="title mb-30 pb-25 text-capitalize">Votre panier est vide</h3>
+            <a routerLink="/shop" class="btn btn-block theme-btn--dark1 btn--lg mt-70">Revenir à la boutique</a>
+        </div>
+    </section>
+</section>
+<app-footer></app-footer>

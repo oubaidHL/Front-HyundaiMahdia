@@ -1,0 +1,175 @@
+<app-header></app-header>
+<!-- section de services start -->
+<div class="service-forum" id="service-forum">
+    <div class="container">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+                <!--form mask starts-->
+            <div class="card">
+                <div class="card-body">
+                    <form class="forms-sample" [formGroup]="TestForum" >
+                        <div class="alert alert-danger text-center" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+                        <div class="alert alert-success text-center" role="alert" *ngIf="successMessage">{{successMessage}}</div>	
+                         <form class="forms-sample" [formGroup]="choose">	
+                                <h3>1. Sélectionnez votre véhicule</h3>
+                                <hr>
+                                 <input type="hidden" id="verif-send-form" name="verif-send-form" value="0634e2e7ab" /><input type="hidden" name="_wp_http_referer" value="/test-drive/" />  
+                                    <div id="no-vehicule">Veuillez sélectionner un modèle à tester SVP.</div>      
+                                  
+                                <div class="row mb40">
+                                    <div class="row">
+                                        <div class="col-sm-4" style="text-align: center;">
+                                             <img src="assets/img/cars/car1.png" width="300" />                            
+                                            <div class="radio">
+                                                <input formControlName="model" id="checkbox1" type="radio" value="GRAND I10 SEDAN" name="model"/>
+                                                <label for="checkbox1"><b>&nbsp; GRAND I10 SEDAN</b></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4" style="text-align: center;">
+                                             <img src="assets/img/cars/car2.png" width="300" />
+                                                <div class="radio">
+                                                    <input formControlName="model" id="checkbox2" type="radio" value="NEW SANTA FE" name="model"/>
+                                                    <label for="checkbox2"><b>&nbsp;NEW SANTA FE</b></label>
+                                                </div>
+                                        </div>
+                                             <div class="col-sm-4" style="text-align: center;">
+                                                 <img src="assets/img/cars/car3.png" width="300" />
+                                                 <div class="radio">
+                                                     <input formControlName="model" id="checkbox3" type="radio" value="NEW GRAND I10" name="model"/>
+                                                     <label for="checkbox3"><b>&nbsp;NEW GRAND I10</b></label>
+                                                 </div>
+                                             </div>
+                                     </div>
+                                </div>
+                                <div class="row mb40">
+                                    <div class="row">
+                                        <div class="col-sm-4" style="text-align: center;">
+                                             <img src="assets/img/cars/car4.png" width="300" />                            
+                                            <div class="radio">
+                                                <input formControlName="model" id="checkbox4" type="radio" value="GRAND I10 POPULAIRE" name="model"/>
+                                                <label for="checkbox4"><b>&nbsp;GRAND I10 POPULAIRE</b></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4" style="text-align: center;">
+                                             <img src="assets/img/cars/car5.png" width="300" />
+                                                <div class="radio">
+                                                    <input  formControlName="model" id="checkbox5" type="radio" value="I20 NOUVELLE GÉNÉRATION" name="model"/>
+                                                    <label for="checkbox5"><b>&nbsp;I20 NOUVELLE GÉNÉRATION</b></label>
+                                                </div>
+                                        </div>
+                                             <div class="col-sm-4" style="text-align: center;">
+                                                 <img src="assets/img/cars/car6.png" width="300" />
+                                                 <div class="radio">
+                                                    <input  formControlName="model" id="checkbox6" type="radio" value="ELANTRA" name="model"/>
+                                                     <label for="checkbox6"><b>&nbsp;ELANTRA</b></label>
+                                                 </div>
+                                             </div>
+                                     </div>
+                                </div>
+                            </form>
+
+                                <div class="row">
+                                <div class="col-sm-12" >
+                                    <hr>
+                                <h3>2. Identifiez-vous </h3>
+                            <hr>    
+                            </div>
+
+                                <div class="col-sm-4">
+                                <div class="form-group">
+                                <label>Civilité</label>                    
+                                <select formControlName="sexe" id="civility" name="civility" class="form-control" value="">Choisir civilité>
+                                    <option >Choisir civilité</option>
+                                    <option formControlName="sexe" value="Mme" name="sexe">Mme</option>
+                                     <option formControlName="sexe" value="M" name="sexe">M</option>
+                                </select>
+                                <span id="invalid-civility" style="display: none; color: red;">Civilité obligatoire</span>
+                                </div>
+                                </div>
+                                <div class="col-sm-4">
+                                <div class="form-group">
+                                <label>Nom</label>                    
+                                <input formControlName="firstname" type="text" class="form-control" />
+                                <span id="invalid-firstname" style="display: none; color: red;">Nom obligatoire</span>
+                                </div>
+                                </div>
+                                <div class="col-sm-4">
+                                <div class="form-group">
+                                <label>Prénom</label>                    
+                                <input formControlName="lastname" type="text" class="form-control" id="your-lastname" name="your-lastname" />
+                                <span id="invalid-lastname" style="display: none; color: red;">Prénom obligatoire</span>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-8">
+                                <div class="form-group">
+                                <label>Adresse</label>                    
+                                <input formControlName="adresse" type="text" class="form-control" id="your-adresse" name="your-adresse" />
+                                <span id="invalid-address" style="display: none; color: red;">Adresse obligatoire</span>
+                                </div>
+                                </div>
+                                <div class="col-sm-2">
+                                <div class="form-group">
+                                <label>CP</label>                    
+                                <input formControlName="cp" type="text" class="form-control" id="your-zipcode" name="your-zipcode" />
+                                <span id="invalid-zipcode" style="display: none; color: red;">Code postal obligatoire</span>
+                                </div>
+                                </div>
+                                <div class="col-sm-2">
+                                <div class="form-group">
+                                <label>Ville</label>                    
+                                <input  formControlName="ville" type="text" class="form-control" id="your-city" name="your-city" />
+                                <span id="invalid-city" style="display: none; color: red;">Ville obligatoire</span>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-sm-6">
+                                <div class="form-group">
+                                <label>Téléphone</label>                    
+                                <input  formControlName="tlfn" type="text" class="form-control" id="your-phone" name="your-phone" />
+                                <span id="invalid-phone" style="display: none; color: red;">N° tél. obligatoire</span>
+                                </div>
+                                </div>
+                                <div class="col-sm-6">
+                                <div class="form-group">
+                                <label>E-mail</label>                    
+                                <input formControlName="email" type="email" class="form-control" id="your-email" name="your-email" />
+                                <span id="invalid-email" style="display: none; color: red;">E-mail obligatoire</span>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                <label>Message</label>
+                                <textarea formControlName="message" class="form-control" id="your-message" name="your-message"></textarea>
+                                <span id="invalid-message" style="display: none; color: red;">Message obligatoire</span>
+                                </div>
+                                <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                                <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+                                      <script type="text/javascript">
+                                           var onloadCallback = function() {
+                                             grecaptcha.render('html_element', {
+                                                 'sitekey' : 'your_site_key'
+
+                                                });
+                                           };
+                                  </script>
+                                <div class="sign-btn">
+                                    <button (click)="onSubmit()" class="btn btn-primary btn--md" >Envoyer</button>
+                                </div>
+                                
+                        </form>      
+                    </div>
+                </div>
+                    
+                <div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+<app-footer></app-footer>

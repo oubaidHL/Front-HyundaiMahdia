@@ -1,0 +1,127 @@
+<header >
+    <div class="header-top theme1 bg-dark py-15">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7 order-last order-md-first">
+                    <div class="static-info text-center text-md-left">
+                      <h3>  <p class="text-white">{{today | date:' dd-MM-yyyy       hh:mm:ss a':'+1'}}</p></h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <nav class="navbar-top pb-2 pb-md-0 position-relative">
+                        <ul class="d-flex justify-content-center justify-content-md-end align-items-center">
+                            <li>
+                                <a href="#" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Réglages<i class="ion ion-ios-arrow-down"></i></a>
+                                <ul class="topnav-submenu dropdown-menu" aria-labelledby="dropdown1">
+                                    <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/profile">Mon compte</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                    <li><a href="#">Deconnexion</a></li>
+            
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devise<i class="ion ion-ios-arrow-down"></i> </a>
+                                <ul class="topnav-submenu dropdown-menu" aria-labelledby="dropdown1">
+                                    <li><a href="#">DTN</a></li>
+                                    <li><a href="#">DOLLAR</a></li>
+                                    <li><a href="#">EURO</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="english">
+                                <a href="#" id="dropdown3" class="pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue <i class="ion ion-ios-arrow-down"></i></a>
+                                    <ul class="topnav-submenu dropdown-menu" aria-labelledby="dropdown1">
+                                        <li> <img src="assets/img/logo/tn.png" alt="us flag"><a>العربية</a></li>
+                                        <li><img src="assets/img/logo/us-flag.jpg" alt="us flag"><a>English</a></li>
+                                        <li> <img src="assets/img/logo/france.jpg" alt="us flag"><a>Francais</a></li>
+                                   
+                                    </ul>
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header top end -->
+    <!-- header-middle satrt -->
+    <div class="header-middle  pt-20">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-6 col-lg-1 order-first">
+                    <div class="logo text-center text-sm-left mb-30 mb-sm-0">
+                        <a href="index.html"><img class="site-branding custom-logo-link image" src="assets/img/logo/HM-LOGO.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-5 col-xl-4">
+                    <!-- search-form end -->
+                    <div class="d-flex align-items-center justify-content-center justify-content-sm-end">
+                        <div class="media static-media mr-50 d-none d-lg-flex">
+                            <img class="mr-3 align-self-center" src="assets/img/icon/1.png " alt="icon">
+                            <div class="media-body">
+                                <div class="phone">
+                                    <span class="text-muted">appelez nous :</span>
+                                </div>
+                                <div class="phone">
+                                    <a href="tel:(+216)70 038 480" class="text-dark">(+216)70 038 480</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- static-media end -->
+                        <div class="cart-block-links theme1">
+                            <ul class="d-flex">
+
+                                <li class="mr-0 cart-block position-relative">
+                                    <a class="offcanvas-toggle" routerLink="/cart">
+                                        <span class="position-relative">
+                                        <i class="icon-bag"></i>
+                                        <span class="badge cbdg1">{{ cartData.len}}</span>
+                                        </span>
+                                        <span class="cart-total position-relative">{{(cartData.cost).toFixed(2)}}  dt</span>
+                                    </a>
+                                </li>
+                                <!-- cart block end -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-xl-6 order-lg-first">
+                    <div class="search-form pt-30 pt-lg-0">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header-middle end -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded  navbar-fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="row align-items-center collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="col-lg-10 offset-lg-2 d-flex flex-wrap align-items-center position-relative">
+
+                    <ul class="main-menu d-flex navbar-nav mr-auto ">
+
+                        <li routerLinkActive="active"><a routerLink="/home">ShowRoom</a></li>
+                        <li routerLinkActive="active"><a routerLink="/shop">Magasin</a></li>
+                        <li routerLinkActive="active"><a>Catégorie</a>
+                            <ul class="sub-menu">
+                                <li *ngFor="let category of categories"><a [routerLink]="['/category',category.idCategory]">{{ category.name }}</a></li>
+                            </ul>
+                        </li>
+                        <li routerLinkActive="active"><a routerLink="/testdrive">TestDrive</a></li>
+                        <li routerLinkActive="active"><a routerLink="/serv">Services</a></li>
+                        <li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>
+                        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/login">Connexion</a></li>
+                        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/register">S'inscrire</a></li>
+                        <li routerLinkActive="active" (click)="logout()" *ngIf="isAuth"><a>Se déconnecter</a></li>
+                        <li routerLinkActive="active" *ngIf="isAuth"><a routerLink="/profile">Mon compte</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+    </nav>
+</header>

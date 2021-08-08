@@ -1,0 +1,140 @@
+<app-header></app-header>
+<section class="product-single theme3 pt-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="position-relative">
+                    <span class="badge badge-danger top-right">New</span>
+                </div>
+                <div class="product-sync-init mb-20">
+                    <div class="single-product">
+                        <div class="product-thumb">
+                            <img class="float-right" width="650" [src]="prefUrlImage+product.image" alt="product-thumb">
+                        </div>
+                    </div>
+
+                    <!-- single-product end -->
+                </div>
+
+
+            </div>
+            <div class="col-lg-6 mt-5 mt-md-0">
+                <div class="single-product-info">
+                    <div class="single-product-head">
+                        <h2 class="title mb-20">{{ product.name }}</h2>
+                        <div class="star-content mb-20">
+                            <span class="star-on"><i class="ion-ios-star"></i> </span>
+                            <span class="star-on"><i class="ion-ios-star"></i> </span>
+                            <span class="star-on"><i class="ion-ios-star"></i> </span>
+                            <span class="star-on"><i class="ion-ios-star"></i> </span>
+                            <span class="star-on"><i class="ion-ios-star"></i> </span>
+
+                        </div>
+                    </div>
+                    <div class="product-body mb-40">
+                        <div class="d-flex align-items-center mb-30">
+                            <h6 class="product-price mr-20"><del class="del">{{ (product.price*1.1).toFixed(2) }}dt</del>
+                                <span class="onsale">{{ product.price }}dt</span></h6>
+                            <span class="badge position-static bg-dark rounded-0">Save 10%</span>
+                        </div>
+                        <p>Description : {{ product.description}}</p>
+
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-count style d-flex flex-column flex-sm-row mt-30 mb-30">
+
+                            <div>
+                                <button (click)="addCart(product)" class="btn theme-btn--dark3 btn--xl mt-5 mt-sm-0 rounded-5" data-toggle="modal" [attr.data-target]="'#add-to-cart-'+product.idProduct">
+                                <span class="mr-2"><i class="ion-android-add"></i></span>
+                                Add to cart
+                              </button>
+                            </div>
+
+                        </div>
+
+                        <div class="pro-social-links mt-10">
+                            <ul class="d-flex align-items-center">
+                                <li class="share">Share</li>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-google"></i></a></li>
+                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-tab theme3 bg-white pt-60 pb-80">
+            <div class="container">
+                <div class="product-tab-nav">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <nav class="product-tab-menu single-product">
+                                <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Description</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Product Details</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Reviews</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-tab-nav end -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tab-content" id="pills-tabContent">
+                            <!-- first tab-pane -->
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="single-product-desc">
+                                    <ul>
+                                        <li>
+                                            {{ product.description}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- second tab-pane -->
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <div class="single-product-desc">
+                                    <div class="grade-content">
+                                        <span class="grade">Grade </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <h6 class="sub-title">test</h6>
+                                        <p>23/09/2020</p>
+                                        <h4 class="title">test</h4>
+                                        <p>test</p>
+                                    </div>
+                                    <hr class="hr">
+                                    <div class="grade-content">
+                                        <!-- product.reviwe-->
+                                        <span class="grade">Grade </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <span class="star-on"><i class="ion-ios-star"></i> </span>
+                                        <h6 class="sub-title">Hastheme</h6>
+                                        <p>23/09/2020</p>
+                                        <a href="#" class="btn theme-btn--dark3 theme-btn--dark3-sm btn--sm rounded-5 mt-15" data-toggle="modal" data-target="#exampleModalCenter">Write your review !</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-modal-add-to-cart [products]="[product]"></app-modal-add-to-cart>

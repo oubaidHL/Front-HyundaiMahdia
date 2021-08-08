@@ -1,0 +1,78 @@
+<app-header></app-header>
+<!-- contact-section satrt -->
+<section class="contact-section pt-80 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12 mb-30">
+                <!--  contact page side content  -->
+                <div class="contact-page-side-content">
+                    <h3 class="contact-page-title">Nous contacter</h3>
+                    <!--  single contact block  -->
+                    <div class="single-contact-block">
+                        <h4><i class="fa fa-fax"></i> Adresse</h4>
+                        <p>Hyundai, Avenue Ali Belhouane, Mahdia</p>
+                    </div>
+
+                    <!--  End of single contact block -->
+
+                    <!--  single contact block -->
+
+                    <div class="single-contact-block">
+                        <h4><i class="fa fa-phone"></i>Téléphone</h4>
+                        <p>
+                            <a href="tel:(+216)70 038 480">Mobile: (+216) 70 038 480</a>
+                        </p>
+                    </div>
+
+                    <!-- End of single contact block -->
+
+                    <!--  single contact block -->
+
+                    <div class="single-contact-block">
+                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                        <p>
+                            <a href="ur mail ">HuyndaiMahdia@hyundai.tn</a>
+                        </p>
+                    </div>
+
+                    <!--=======  End of single contact block  =======-->
+                </div>
+
+                <!--=======  End of contact page side content  =======-->
+
+            </div>
+            <div class="col-lg-6 col-12 mb-30">
+                <!--  contact form content -->
+                <div class="contact-form-content">
+                    <h3 class="contact-page-title">Dites-nous votre message</h3>
+                    <div class="contact-form">
+                        <form id="contact-form" action="assets/php/mail.php" method="post">
+                            <div class="form-group">
+                                <label>Votre nom <span class="required">*</span></label>
+                                <input type="text" name="customerName" id="customername" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Votre Email <span class="required">*</span></label>
+                                <input type="email" name="customerEmail" id="customerEmail" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>sujet</label>
+                                <input type="text" name="contactSubject" id="contactSubject" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Votre Message</label>
+                                <textarea name="contactMessage" class="pb-10" id="contactMessage" required=""></textarea>
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" value="submit" id="submit" class="btn theme-btn--dark1 btn--lg" name="submit">soumettre</button>
+                            </div>
+                        </form>
+                    </div>
+                    <p class="form-messegemt-10"></p>
+                </div>
+                <!-- End of contact -->
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

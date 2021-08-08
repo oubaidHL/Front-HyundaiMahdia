@@ -1,0 +1,70 @@
+<div class="modal fade theme1 style1" *ngFor="let product of products" [id]="'quick-view-'+product.idProduct" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8 mx-auto col-lg-5 mb-5 mb-lg-0">
+                        <div class="product-sync-init mb-20">
+                            <div class="single-product">
+                                <div class="product-thumb">
+                                    <img width="460" [src]="prefUrlImage+product.image" alt="product-thumb">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 mt-5 mt-md-0">
+                        <div class="modal-product-info">
+                            <div class="product-head">
+                                <h2 class="title">{{ product.name}}</h2>
+                                <h4 class="sub-title">Reference:{{ product.idProduct }} </h4>
+                                <div class="star-content mb-20">
+                                    <span class="star-on"><i class="fas fa-star"></i> </span>
+                                    <span class="star-on"><i class="fas fa-star"></i> </span>
+                                    <span class="star-on"><i class="fas fa-star"></i> </span>
+                                    <span class="star-on"><i class="fas fa-star"></i> </span>
+                                    <span class="star-on de-selected"><i class="fas fa-star"></i> </span>
+                                </div>
+                            </div>
+                            <div class="product-body">
+                                <span class="product-price text-center">
+                                   <del class="del">{{ (product.price*1.1).toFixed(2) }}dt</del>
+                                   <span class="new-price">{{ product.price }}dt</span>
+                                </span>
+                                <p>Description : {{ product.description }}</p>
+
+                            </div>
+
+                            <div class="product-footer">
+                                <div class="product-count style d-flex flex-column flex-sm-row my-4">
+
+                                    <div>
+                                        <button (click)="addCart(product)" class="btn theme-btn--dark1 btn--xl mt-5 mt-sm-0 rounded-5" data-dismiss="modal">
+                                  <span class="mr-2"><i class="ion-android-add" ></i></span>
+                                  Ajouter au panier
+                              </button>
+                                    </div>
+                                </div>
+
+                                <div class="pro-social-links mt-10">
+                                    <ul class="d-flex align-items-center">
+                                        <li class="share">Share</li>
+                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-google"></i></a></li>
+                                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
